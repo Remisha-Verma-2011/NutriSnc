@@ -1,10 +1,8 @@
 import streamlit as st
-from google import genai
-import time  # 1. ADD THIS HERE at the top
+import google.generativeai as genai
 
 # Set up your config
-API_KEY = st.secrets["API_KEY"]
-client = genai.Client(api_key=API_KEY)
+genai.configure(api_key=st.secrets["API_KEY"])
 
 st.set_page_config(page_title="NutriSync", page_icon="🍎")
 st.title("🍎 NutriSync")
